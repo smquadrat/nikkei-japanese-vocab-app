@@ -1,0 +1,186 @@
+/* Base Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    color: #333333;
+    }
+    
+a {
+color: #000000;
+text-decoration: none;
+}
+
+ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+h1 {
+font-size: 36px;
+font-weight: bold;
+margin-top: 80px;
+margin-bottom: 40px;
+text-align: center;
+}
+
+p {
+margin-bottom: 24px;
+text-align: center;
+}
+
+/* Header */
+header {
+background-color: #ffffff;
+border-bottom: 1px solid #cccccc;
+padding: 12px 24px;
+}
+
+header h1 {
+font-size: 24px;
+font-weight: bold;
+margin: 0;
+}
+
+/* Navigation */
+nav {
+background-color: #f0f0f0;
+border-bottom: 1px solid #cccccc;
+padding: 8px 24px;
+}
+
+nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+nav li {
+margin: 0 16px;
+text-align: center;
+}
+
+nav a {
+font-size: 18px;
+font-weight: bold;
+padding: 12px 24px;
+border-radius: 8px;
+}
+
+nav a:hover {
+background-color: #cccccc;
+}
+
+nav a.active {
+background-color: #000000;
+color: #ffffff;
+}
+
+/* Footer */
+footer {
+background-color: #f0f0f0;
+border-top: 1px solid #cccccc;
+padding: 8px 24px;
+margin-top: 40px;
+text-align: center;
+}
+
+footer p {
+margin: 0;
+}
+
+footer a {
+color: #000000;
+text-decoration: none;
+}
+
+.logo-image {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 400px;
+height: 60px;
+}
+
+/* Vocabulary List */
+.vocab-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding-left: 0;
+}
+
+.vocab-list li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    margin-bottom: 12px;
+    padding-left: 220px;
+}
+
+.vocab-list li strong {
+    margin-right: 12px;
+    text-align: left;
+}
+
+/* Score */
+.score-section {
+font-size: 24px;
+}
+
+/* Quiz Buttons */
+.quiz-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 2rem;
+}
+
+.radio {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 1rem;
+}
+
+.radio label {
+margin-left: 0.5rem;
+font-size: 1.8rem;
+}
+
+.quiz-button {
+margin-top: 2rem;
+font-size: 1.4rem;
+}
+
+.quiz-score {
+margin-top: 2rem;
+font-size: 1.4rem;
+}
+
+.quiz-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #003E70;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    width: 200px;
+  }
+  
+  .quiz-button:hover {
+    background-color: #003E70;
+  }
+  
+  .quiz-form {
+    margin-top: 20px;
+  }
+  
+  .quiz-score {
+    margin-top: 20px;
+  }

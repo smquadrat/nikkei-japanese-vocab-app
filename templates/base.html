@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Nikkei Logo" class="logo-image">
+                <p></p>
+                <h1>Nikkei Vocabulary Builder</h1>
+                <p></p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/vocab_list">Vocabulary List</a></li>
+                    <li><a href="/quiz">Take Quiz</a></li>
+                    {% if current_score %}
+                    <li><a href="/quiz?restart=True">Start Over</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023</p>
+        </div>
+    </footer>
+</body>
+</html>

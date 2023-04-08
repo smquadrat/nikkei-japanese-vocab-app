@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nikkei Vocabulary List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Nikkei Logo" class="logo-image">
+                <p></p>
+                <h1>Nikkei Vocabulary Builder</h1>
+                <p></p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/vocab_list">View Vocabulary List</a></li>
+                    <li><a href="/quiz">Take Quiz</a></li>
+                    {% if current_score %}
+                    <li><a href="/quiz?restart=True">Start Over</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <p>Below is a list of the 500 most frequent vocabulary words found in the Nikkei newspaper:</p>
+        <ul class="vocab-list">
+            {% for word in vocab %}
+                <li><strong>{{ word.word }}</strong> - {{ word.meaning }} ({{ word.reading }})</li>
+            {% endfor %}
+        </ul>
+        <p><a href="/">Back to Home</a></p>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Nikkei Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>
