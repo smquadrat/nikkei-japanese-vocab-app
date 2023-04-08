@@ -4,17 +4,16 @@
 
 {% block content %}
 {% if vocab %}
-
-<h1>What is the meaning of {{ vocab.word }}?</h1>
-<form method="POST" class="quiz-form">
-{% for choice in choices %}
-<button type="submit" name="choice" value="{{ choice.meaning }}" class="quiz-button">{{ choice.meaning }}</button>
-{% endfor %}
-</form>
-<p class="quiz-score">Current Score: {{ score.correct }} correct, {{ score.incorrect }} incorrect</p>
+  <h1>What is the meaning of {{ vocab.word }}?</h1>
+  <form method="POST" class="quiz-form">
+    {% for choice in choices %}
+      <button type="submit" name="choice" value="{{ choice.meaning }}" class="quiz-button">{{ choice.meaning }}</button>
+    {% endfor %}
+  </form>
+  <p class="quiz-score">Current Score: {{ score.correct }} correct, {{ score.incorrect }} incorrect</p>
 {% else %}
-<h1>No more vocabulary words remaining</h1>
-<p class="quiz-score">Final Score: {{ score.correct }} correct, {{ score.incorrect }} incorrect</p>
-<a href="/"><button class="quiz-button">Home</button></a>
+  <h1>No more vocabulary words remaining</h1>
+  <p class="quiz-score">Final Score: {{ score.correct }} correct, {{ score.incorrect }} incorrect</p>
+  <a href="/"><button class="quiz-button">Home</button></a>
 {% endif %}
 {% endblock %}
