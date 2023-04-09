@@ -55,10 +55,13 @@ def quiz():
         current_score['incorrect'] = 0
         return redirect(url_for('quiz'))
 
+    # Calculate the total number of questions
+    total = len(load_vocab())
+
     # Check if quiz is complete
     if len(quiz_data.get('remaining', [])) == 0:
         # Quiz is complete
-        return render_template('quiz_complete.html', score=current_score)
+        return render_template('quiz_complete.html', score=current_score, total=total)
 
     if request.method == 'POST':
         # Check if answer is correct
@@ -98,7 +101,8 @@ def quiz():
         # Pass the data to the template
         return render_template('quiz.html', vocab=current_vocab, choices=choices, score=current_score)
     else:
-        return render_template('quiz_complete.html', score=current_score)
+        # No more words remaining
+        return render_template('quiz_complete.html', score=current_score, total=total)
 
 if __name__ == '__main__':
     app.run(debug=True)
